@@ -7,5 +7,10 @@ def addRegisterPayload(user,password):
 
 
 
+def addLoginPayload(user,password):
+    return addRegisterPayload(user,password)
+
+
+
 
 

@@ -25,3 +25,45 @@ def error():
         },
         "required": ['error']
      }
+
+
+def login():
+     return {
+        "title": "Login",
+        "type": "object",
+        "properties": { 
+            "token": {"type": "string"}
+        },
+        "required": ['token']
+     }
+
+def users():
+     return {
+        "title": "Login",
+        "type": "object",
+        "properties": { 
+            "data": { "$ref": "#/definitions/Data"}
+        },
+        "definitions": {
+            "Data": {
+                "title": "Data",
+                "type": "object",
+                "properties": {
+                    "id": {"type": "number"},
+                    "email": {"type": "string"},
+                    "first_name": {"type": "string"},
+                    "last_name": {"type": "string"},
+                    "avatar": {"type": "string"}
+                 }
+            },
+            "required": ["id","email","first_name","last_name","avatar"],
+        }
+     }
+
+
+def empty():
+     return {
+        "title": "Empty Result",
+        "type": "object",
+        "properties": {}
+     }
