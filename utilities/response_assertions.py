@@ -7,7 +7,7 @@ from json_schema_matchers.common_matcher import matches_json_schema
 
 def verify_response(context, schema, status_code=200):
 
-    response_body = context.response.json()
+    response_body = context.response.json() or {}
 
     #Verify Status Code
     assert_that(context.response.status_code, status_code)
